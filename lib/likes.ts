@@ -35,3 +35,19 @@ export async function hasUserLiked(
 
   return !!data;
 }
+
+export async function unlikeConfession(
+  confessionId: string,
+  userFingerprint: string,
+) {
+  const { error } = await supabase
+    .from("likes")
+    .delete()
+    .eq("confession_id", confessionId)
+    .eq("user_fingerprint", userFingerprint);
+
+  if (error) throw error;
+
+  await supabase.rpc("decrement_like_count", { confession_id: confessionId });
+  return { success: true };
+}

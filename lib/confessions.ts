@@ -2,10 +2,20 @@ import { supabase } from "./supabase";
 
 // GET all confessions for a city
 export async function getConfessionsByCity(cityName: string) {
+  // First get city id from name
+  const { data: city, error: cityError } = await supabase
+    .from("cities")
+    .select("id")
+    .ilike("name", cityName)
+    .single();
+
+  if (cityError || !city) return [];
+
+  // Then get confessions by city_id
   const { data, error } = await supabase
     .from("confessions")
     .select("*, cities(name)")
-    .eq("cities.name", cityName)
+    .eq("city_id", city.id)
     .order("created_at", { ascending: false });
 
   if (error) throw error;
