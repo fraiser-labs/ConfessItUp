@@ -81,7 +81,7 @@ export default function CityPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white px-4 py-10">
+    <main className="min-h-screen bg-black text-white px-4 py-10 max-w-6xl mx-auto">
       {/* Back button */}
       <button
         onClick={() => router.push("/")}
