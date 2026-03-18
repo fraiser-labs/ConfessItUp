@@ -142,9 +142,10 @@ export default function Page() {
 
   return (
     <main className="relative bg-black text-white flex flex-col items-center px-4 overflow-hidden">
-      {/* Floating background cards */}
       {floatingCards.map((card, i) => (
-        <FloatingCard key={i} text={card.text} style={card.style} />
+        <div key={i} className="hidden md:block">
+          <FloatingCard text={card.text} style={card.style} />
+        </div>
       ))}
 
       {/* Pink glow */}
