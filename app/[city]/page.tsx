@@ -240,7 +240,7 @@ export default function CityPage() {
                 <span className="text-neutral-500 text-xs">Anonymous</span>
               </div>
 
-              <p className="text-white text-sm leading-relaxed">
+              <p className="text-white text-sm leading-relaxed line-clamp-4">
                 {confession.content}
               </p>
 
