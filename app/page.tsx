@@ -143,11 +143,9 @@ export default function Page() {
   return (
     <main className="relative bg-black text-white flex flex-col items-center px-4 overflow-hidden">
       {/* Floating background cards - desktop only */}
-      <div className="hidden md:block">
-        {floatingCards.map((card, i) => (
-          <FloatingCard key={i} text={card.text} style={card.style} />
-        ))}
-      </div>
+      {floatingCards.map((card, i) => (
+        <FloatingCard key={i} text={card.text} style={card.style} />
+      ))}
 
       {/* Pink glow */}
       <div className="absolute top-1/3 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-3xl pointer-events-none" />
