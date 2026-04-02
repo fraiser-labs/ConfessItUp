@@ -43,7 +43,7 @@ function FloatingCard({
 }) {
   return (
     <div
-      className="absolute bg-neutral-900/70 border border-neutral-800/60 rounded-2xl p-5 max-w-[240px] backdrop-blur-sm pointer-events-none select-none"
+      className="hidden md:block absolute bg-neutral-900/70 border border-neutral-800/60 rounded-2xl p-5 max-w-[240px] backdrop-blur-sm pointer-events-none select-none"
       style={style}
     >
       <p className="text-neutral-300 text-sm leading-relaxed">{text}</p>
