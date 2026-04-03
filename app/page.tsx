@@ -274,7 +274,7 @@ export default function Page() {
             </span>
           </div>
           <p className="text-neutral-700 text-xs">
-            made with <span className="text-pink-500">♥</span> by M Faisal
+            made with <span className="text-pink-500">♥</span> by FrenzyDev
           </p>
         </div>
       </footer>
